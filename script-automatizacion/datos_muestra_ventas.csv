@@ -1,0 +1,14 @@
+fecha,producto,cantidad,precio_unitario,email_cliente
+12/03/2026, Café con leche ,2,$3.50,maria@example.com
+2026-03-12,Medialunas (docena),1,$12.00,maria@example.com
+13/03/2026,Tostado mixto,3,$8.50,juan.perez@example.com
+14/03/2026,Café con leche,2,$3.50,cafe@example.com
+14/03/2026,Café con leche,2,$3.50,cafe@example.com
+15/03/2026,Jugo de naranja,4,$4.00,laura@example.com
+3/05/2026,Empanadas (media docena),2,$9.00,pedro@example.com
+16/03/2026,Cheesecake,1,$6.50,luis@example.com
+
+17/03/2026, Café con leche , 1 , $3.50 , sara@example.com
+18/03/2026,Tostado mixto,2,$8.50,cliente@invalido
+19/03/2026,Empanadas (media docena),3,$9.00,,sin correo
+20/03/2026,Jugo de naranja,2,$4.00,laura@example.com

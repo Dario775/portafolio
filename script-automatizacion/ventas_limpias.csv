@@ -1,0 +1,10 @@
+fecha,producto,cantidad,precio_unitario,email_cliente
+2026-03-12,Café con leche,2,3.5,maria@example.com
+2026-03-12,Medialunas (docena),1,12.0,maria@example.com
+2026-03-13,Tostado mixto,3,8.5,juan.perez@example.com
+2026-03-14,Café con leche,2,3.5,cafe@example.com
+2026-03-15,Jugo de naranja,4,4.0,laura@example.com
+2026-05-03,Empanadas (media docena),2,9.0,pedro@example.com
+2026-03-16,Cheesecake,1,6.5,luis@example.com
+2026-03-17,Café con leche,1,3.5,sara@example.com
+2026-03-20,Jugo de naranja,2,4.0,laura@example.com

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fogón & Brasa — Restaurante de carnes en Villa Santa Clara</title>
+<meta name="description" content="Restaurante Fogón & Brasa: carnes a la parrilla, ambiente familiar y servicio de reservas en Villa Santa Clara. Abierto de martes a domingo.">
+<meta property="og:title" content="Fogón & Brasa — Restaurante de carnes">
+<meta property="og:description" content="Carnes a la parrilla y cocina de fuego en Villa Santa Clara. Reserve por WhatsApp.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --fondo:#faf7f2; --tinta:#221d16; --suave:#6b6255; --carbon:#14110d;
+    --carbon2:#1e1a14; --llama:#d98e2b; --llama2:#b56f14; --linea:#e8e0d3;
+    --blanco:#fffdf9; --verde:#1f8a4c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--tinta);background:var(--fondo);line-height:1.6}
+  h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif}
+  img,svg{max-width:100%}
+  a{color:inherit}
+  .envoltura{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Barra superior */
+  .barra{background:var(--carbon);color:#e8e0d3;font-size:.85rem;padding:8px 0}
+  .barra .envoltura{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .barra a{color:var(--llama);text-decoration:none}
+
+  /* Navegación */
+  nav{position:sticky;top:0;z-index:50;background:var(--blanco);border-bottom:1px solid var(--linea)}
+  nav .envoltura{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:Georgia,serif;font-size:1.35rem;letter-spacing:.5px}
+  .logo span{color:var(--llama2)}
+  .menu{display:flex;gap:26px;list-style:none}
+  .menu a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--tinta)}
+  .menu a:hover{color:var(--llama2)}
+  .cta-nav{background:var(--carbon);color:var(--blanco)!important;padding:9px 16px;border-radius:6px;font-size:.85rem}
+  .cta-nav:hover{background:var(--llama2);color:#fff!important}
+  #alternar{display:none}
+  .boton-menu{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--tinta)}
+
+  /* Hero */
+  header.hero{background:linear-gradient(160deg,var(--carbon) 0%,var(--carbon2) 60%,#2a2118 100%);color:#f3ead9;text-align:center;padding:90px 20px 80px}
+  .hero .etiqueta{display:inline-block;border:1px solid rgba(217,142,43,.6);color:var(--llama);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:99px;margin-bottom:22px}
+  .hero h1{font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.12;margin-bottom:16px}
+  .hero h1 em{color:var(--llama);font-style:normal}
+  .hero p{max-width:640px;margin:0 auto 30px;color:#cfc5b2;font-size:1.08rem}
+  .botones{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 26px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.95rem;transition:.2s}
+  .btn-llama{background:var(--llama);color:#1d1507}
+  .btn-llama:hover{background:#eaa33e}
+  .btn-borde{border:1px solid #6b6255;color:#f3ead9}
+  .btn-borde:hover{border-color:var(--llama);color:var(--llama)}
+  .hero .nota{margin-top:22px;font-size:.85rem;color:#9a8f7c}
+
+  /* Secciones */
+  section{padding:76px 0}
+  .cabecera-seccion{text-align:center;max-width:680px;margin:0 auto 48px}
+  .cabecera-seccion h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:10px}
+  .cabecera-seccion p{color:var(--suave)}
+
+  /* Especialidades */
+  .tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+  .tarjeta{background:var(--blanco);border:1px solid var(--linea);border-radius:14px;padding:30px 26px;text-align:center;transition:.2s}
+  .tarjeta:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(34,29,22,.08)}
+  .tarjeta .icono{font-size:2.4rem;margin-bottom:12px}
+  .tarjeta h3{font-size:1.15rem;margin-bottom:8px}
+  .tarjeta p{color:var(--suave);font-size:.93rem}
+  .tarjeta .precio{display:inline-block;margin-top:14px;background:#f4ecdf;color:var(--llama2);font-weight:700;font-size:.85rem;padding:4px 12px;border-radius:99px}
+
+  /* Nosotros */
+  .doble{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .panel-imagen{background:linear-gradient(135deg,#2a2118,#14110d);border-radius:18px;min-height:340px;display:flex;align-items:center;justify-content:center;font-size:5rem;color:var(--llama)}
+  .doble h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:16px}
+  .doble p{color:var(--suave);margin-bottom:14px}
+  .lista-tilde{list-style:none;margin-top:6px}
+  .lista-tilde li{padding-left:26px;position:relative;margin-bottom:8px;color:var(--tinta)}
+  .lista-tilde li::before{content:"✓";position:absolute;left:0;color:var(--verde);font-weight:700}
+
+  /* Testimonios */
+  .citas{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+  .cita{background:var(--blanco);border-left:4px solid var(--llama);border-radius:10px;padding:22px 24px;box-shadow:0 4px 14px rgba(34,29,22,.05)}
+  .cita p{font-family:Georgia,serif;font-style:italic;color:#4a4236;margin-bottom:10px}
+  .cita footer{font-size:.85rem;color:var(--suave)}
+
+  /* Contacto */
+  .zona-contacto{background:var(--carbon);color:#f3ead9}
+  .zona-contacto .cabecera-seccion p{color:#b3a894}
+  .rejilla-contacto{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .dato{margin-bottom:22px}
+  .dato h3{color:var(--llama);font-size:.85rem;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+  .dato p{color:#e8e0d3}
+  form.campo label{display:block;font-size:.9rem;margin:14px 0 6px;color:#cfc5b2}
+  form.campo input,form.campo textarea{width:100%;padding:12px 14px;border-radius:8px;border:1px solid #3d352a;background:#221d15;color:#f3ead9;font:inherit}
+  form.campo input:focus,form.campo textarea:focus{outline:2px solid var(--llama);border-color:transparent}
+  form.campo button{margin-top:18px;width:100%}
+
+  footer.pie{background:#0d0b08;color:#8d8271;text-align:center;padding:26px 20px;font-size:.85rem}
+  footer.pie a{color:var(--llama);text-decoration:none}
+
+  /* Botón flotante WhatsApp */
+  .whatsapp{position:fixed;right:20px;bottom:20px;z-index:60;background:var(--verde);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.25);transition:.2s}
+  .whatsapp:hover{transform:scale(1.08)}
+
+  @media(max-width:820px){
+    .boton-menu{display:block}
+    .menu{position:absolute;top:64px;left:0;right:0;background:var(--blanco);flex-direction:column;gap:0;padding:10px 0;border-bottom:1px solid var(--linea);display:none}
+    .menu a{padding:13px 22px;display:block}
+    #alternar:checked ~ .menu{display:flex}
+    .doble,.rejilla-contacto{grid-template-columns:1fr}
+    .cta-nav{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="barra">
+  <div class="envoltura">
+    <span>📍 Av. de los Plátanos 214, Villa Santa Clara</span>
+    <span>📞 <a href="tel:+5215500000000">+52 1 55 0000 0000</a> · <a href="https://wa.me/5215500000000" target="_blank" rel="noopener">Reservas por WhatsApp</a></span>
+  </div>
+</div>
+
+<nav>
+  <div class="envoltura">
+    <div class="logo">Fogón <span>&amp;</span> Brasa</div>
+    <input type="checkbox" id="alternar" hidden>
+    <button class="boton-menu" aria-label="Abrir menú" onclick="document.getElementById('alternar').checked=!document.getElementById('alternar').checked">☰</button>
+    <ul class="menu">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#especialidades">Especialidades</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#contacto" class="cta-nav">Reservar mesa</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="envoltura">
+    <span class="etiqueta">Parrilla · Fuego · Familia</span>
+    <h1>Carnes a la brasa como se hacían <em>antes</em></h1>
+    <p>Leña real, cortes seleccionados y una carta breve que cambia con la temporada. En el corazón de Villa Santa Clara, desde 2009.</p>
+    <div class="botones">
+      <a class="btn btn-llama" href="#contacto">Reservar una mesa</a>
+      <a class="btn btn-borde" href="#especialidades">Ver especialidades</a>
+    </div>
+    <p class="nota">⭐ 4,8 en reseñas de clientes · Martes a domingo, 12:30 – 23:30</p>
+  </div>
+</header>
+
+<section id="especialidades">
+  <div class="envoltura">
+    <div class="cabecera-seccion">
+      <h2>Nuestras especialidades</h2>
+      <p>Tres platos que nos definen y que los clientes piden una y otra vez.</p>
+    </div>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <div class="icono">🥩</div>
+        <h3>Entraña a la parrilla</h3>
+        <p>Madurada 21 días, sal marina y chimichurri de la casa.</p>
+        <span class="precio">$18.900 · 350 g</span>
+      </div>
+      <div class="tarjeta">
+        <div class="icono">🔥</div>
+        <h3>Asado de tira</h3>
+        <p>Cocción lenta a leña de quebracho, 6 horas de paciencia.</p>
+        <span class="precio">$16.500 · porción</span>
+      </div>
+      <div class="tarjeta">
+        <div class="icono">🍷</div>
+        <h3>Tabla Fogón</h3>
+        <p>Para compartir: tres cortes, quesos, vegetales a la brasa y pan casero.</p>
+        <span class="precio">$42.000 · 2 personas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" style="background:#f3ecdf">
+  <div class="envoltura">
+    <div class="doble">
+      <div class="panel-imagen" role="img" aria-label="Fotografía de la parrilla">🔥</div>
+      <div>
+        <h2>Un restaurante de barrio, con estándar de ciudad</h2>
+        <p>Empezamos con una parrilla de 8 banquetas y la idea de que comer bien no debería ser un evento. Hoy seguimos con la misma regla: <strong>producto honesto, fuego bien usado y precios claros</strong>.</p>
+        <ul class="lista-tilde">
+          <li>Leña y carbón vegetal, nunca gas en la parrilla principal.</li>
+          <li>Carnes de productores locales de Villa Santa Clara y la región.</li>
+          <li>Menú infantil, opciones vegetarianas y acceso para sillas de ruedas.</li>
+          <li>Salón para 60 personas + terraza cubierta para eventos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="opiniones">
+  <div class="envoltura">
+    <div class="cabecera-seccion">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <p>Reseñas verificadas de Google y TripAdvisor.</p>
+    </div>
+    <div class="citas">
+      <div class="cita">
+        <p>"La entraña más tierna que probé en años. El servicio fue atento sin ser pesado."</p>
+        <footer>— Carolina M. · reseña de Google</footer>
+      </div>
+      <div class="cita">
+        <p>"Fuimos con niños un domingo al mediodía. Comida rápida, mesa a tiempo y precios justos."</p>
+        <footer>— Diego R. · reseña de Google</footer>
+      </div>
+      <div class="cita">
+        <p>"Reservé por WhatsApp y en minutos estaba confirmado. Ideal para evitar la espera del finde."</p>
+        <footer>— Lucía T. · reseña de TripAdvisor</footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="zona-contacto">
+  <div class="envoltura">
+    <div class="cabecera-seccion">
+      <h2>Reserve su mesa</h2>
+      <p>Respuesta en menos de 15 minutos en horario de apertura. También puede llamarnos directamente.</p>
+    </div>
+    <div class="rejilla-contacto">
+      <div>
+        <div class="dato">
+          <h3>Dirección</h3>
+          <p>Av. de los Plátanos 214, esquina Calle 9<br>Villa Santa Clara</p>
+        </div>
+        <div class="dato">
+          <h3>Horarios</h3>
+          <p>Martes a jueves: 12:30 – 23:00<br>Viernes y sábado: 12:30 – 23:30<br>Domingo: 12:30 – 22:00 · Lunes: cerrado</p>
+        </div>
+        <div class="dato">
+          <h3>Contacto</h3>
+          <p>📞 +52 1 55 0000 0000<br>✉️ hola@fogon-brasa.example</p>
+        </div>
+      </div>
+      <form class="campo" onsubmit="event.preventDefault();this.reset();document.getElementById('aviso-form').hidden=false;">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" required placeholder="Su nombre">
+        <label for="tel">Teléfono / WhatsApp</label>
+        <input id="tel" name="tel" type="tel" required placeholder="+52 ...">
+        <label for="personas">Personas</label>
+        <input id="personas" name="personas" type="number" min="1" max="30" value="2">
+        <label for="fecha">Fecha y hora deseada</label>
+        <input id="fecha" name="fecha" type="datetime-local" required>
+        <button class="btn btn-llama" type="submit">Enviar solicitud de reserva</button>
+        <p id="aviso-form" style="color:#7fd6a3;margin-top:12px" hidden>✓ Gracias. Le confirmaremos por WhatsApp en minutos. (Demo: este formulario requiere conectar un backend o un servicio de reservas.)</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <p>© <span id="anio">2026</span> Fogón &amp; Brasa — Villa Santa Clara · <a href="#inicio">Volver arriba</a></p>
+  <p style="margin-top:6px">Web de demostración: negocio ficticio creado para portafolio.</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5215500000000?text=Hola%2C%20quiero%20reservar%20una%20mesa" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4 29l7.3-2.2c1.9 1 4 1.6 6.3 1.6 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.8c-2.1 0-4.1-.6-5.8-1.7l-.4-.2-4.3 1.3 1.3-4.1-.3-.5c-1.2-1.8-1.9-3.9-1.9-6.1 0-5.4 4.5-9.7 9.9-9.7 5.5 0 9.9 4.3 9.9 9.7s-4.4 9.6-9.9 9.6zm5.4-7.2c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6l.4-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script>document.getElementById('anio').textContent=new Date().getFullYear();</script>
+</body>
+</html>

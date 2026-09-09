@@ -1,0 +1,20 @@
+RESUMEN DE VENTAS — informe generado automáticamente
+Fuente: datos_muestra_ventas.csv
+
+Filas totales en el archivo:       12
+Filas válidas procesadas:          9
+Duplicados eliminados:             1
+Filas inválidas descartadas:       2
+Ingresos totales (válidos):        $103.50
+
+Ingresos por producto:
+  - Tostado mixto: 3 un. · $25.50
+  - Jugo de naranja: 6 un. · $24.00
+  - Empanadas (media docena): 2 un. · $18.00
+  - Café con leche: 5 un. · $17.50
+  - Medialunas (docena): 1 un. · $12.00
+  - Cheesecake: 1 un. · $6.50
+
+Ingresos por mes:
+  - Marzo 2026: 8 op. · $85.50
+  - Mayo 2026: 1 op. · $18.00

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dario Ovejero — Portafolio de servicios digitales</title>
+<meta name="description" content="Portafolio de Dario Ovejero: diseño web profesional, automatización con Python y contenido bilingüe EN/ES. Demos de trabajo real.">
+<style>
+  :root { --navy:#0f2a43; --green:#10b981; --bg:#f6f8fa; --ink:#1c2733; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:Georgia, 'Times New Roman', serif; background:var(--bg); color:var(--ink); line-height:1.6; }
+  header { background:var(--navy); color:#fff; padding:48px 20px; text-align:center; }
+  header h1 { font-size:2rem; letter-spacing:.5px; }
+  header p { margin-top:8px; color:#c8d6e5; font-style:italic; }
+  main { max-width:860px; margin:0 auto; padding:32px 20px 64px; }
+  h2 { color:var(--navy); margin:36px 0 8px; font-size:1.35rem; }
+  .sub { color:#556; font-size:.95rem; margin-bottom:14px; }
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:20px 22px; margin:14px 0; box-shadow:0 1px 3px rgba(0,0,0,.06); }
+  .card h3 { color:var(--navy); margin-bottom:6px; }
+  .card p { font-size:.98rem; }
+  a.btn { display:inline-block; margin-top:10px; background:var(--green); color:#fff; text-decoration:none; padding:9px 18px; border-radius:6px; font-family:Arial, sans-serif; font-size:.9rem; }
+  a.btn:hover { opacity:.88; }
+  .meta { font-family:Arial, sans-serif; font-size:.8rem; color:#667; margin-top:8px; }
+  .lang { font-family:Arial, sans-serif; font-size:.8rem; margin-top:18px; color:#445; }
+  .lang a { color:var(--navy); }
+  footer { text-align:center; padding:24px; color:#889; font-family:Arial,sans-serif; font-size:.82rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Dario Ovejero</h1>
+  <p>Webs profesionales · Automatización con Python · Contenido bilingüe EN/ES</p>
+</header>
+<main>
+  <p class="sub">Bienvenido. Estas son muestras reales de mi trabajo, preparadas como demostración para clientes potenciales. Todo el contenido es original y de ejemplo.</p>
+
+  <h2 id="web">1 · Web profesional — demo</h2>
+  <div class="card">
+    <h3>Fogón &amp; Brasa — sitio web de restaurante</h3>
+    <p>Sitio completo de una sola página: diseño responsive, 5 secciones, SEO básico, botón de WhatsApp y formulario de contacto. Sin dependencias externas, carga instantánea.</p>
+    <a class="btn" href="./web-restaurante/">Ver la web demo</a>
+    <p class="meta">Negocio ficticio · Los datos de contacto son de ejemplo</p>
+  </div>
+
+  <h2 id="auto">2 · Automatización — demo</h2>
+  <div class="card">
+    <h3>Limpieza de datos y reportes en segundos (Python)</h3>
+    <p>Script que toma un CSV deliberadamente sucio (espacios, duplicados, fechas mezcladas, precios con símbolo, emails inválidos) y entrega un archivo limpio + informe por producto y por mes.</p>
+    <p class="meta">Ejecutar: <code>python3 limpiar_datos_ventas.py datos_muestra_ventas.csv</code> — solo biblioteca estándar</p>
+    <a class="btn" href="https://github.com/Dario775/portafolio/tree/main/script-automatizacion">Ver código en GitHub</a>
+  </div>
+
+  <h2 id="contenido">3 · Contenido bilingüe — muestras</h2>
+  <div class="card">
+    <h3>Artículos SEO en español e inglés</h3>
+    <p>Un mismo tema escrito de forma natural en cada idioma (no traducción literal) y artículos originales por idioma, cada uno con su bloque SEO: meta description, keywords y slug.</p>
+    <a class="btn" href="https://github.com/Dario775/portafolio/tree/main/muestras-contenido">Ver muestras en GitHub</a>
+  </div>
+
+  <p class="lang">Looking for the English version? <a href="https://github.com/Dario775/portafolio">Read the repo README</a> · <a href="#web">↑ Arriba</a></p>
+</main>
+<footer>Dario Ovejero · Servicios digitales — webs, automatización y contenido EN/ES · Ejemplos con fines de demostración</footer>
+</body>
+</html>
