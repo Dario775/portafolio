@@ -15,8 +15,8 @@ Transparency: work is AI-assisted with professional human review. You always app
 ## Demos in this repo
 
 ### 1 · Restaurant website (S1)
-[`web-restaurante/`](web-restaurante/) — full one-page site for a fictional restaurant ("Fogón & Brasa"): responsive, 5 sections, WhatsApp button, contact form, basic SEO. No external dependencies.
-**Live preview:** open the folder in GitHub Pages, or view [`index.html`](index.html) landing page locally.
+[`web-restaurante/`](web-restaurante/) — full one-page site for a fictional restaurant ("Fogón & Brasa"): premium editorial design, full-screen hero, 5 sections, WhatsApp button, reservation form, basic SEO + JSON-LD. Single self-contained file (~495 KB) with AI-generated food photography embedded — works offline with zero external requests.
+**Live preview:** open the folder in GitHub Pages, or view the landing [`index.html`](index.html).
 
 ### 2 · Data-cleaning automation (S2)
 [`script-automatizacion/`](script-automatizacion/) — Python script (standard library only) that turns a deliberately messy CSV into a clean file plus a sales report.
@@ -46,4 +46,4 @@ Input has 12 dirty rows → output: 9 valid rows, 1 duplicate removed, 2 invalid
 
 ---
 
-*All business data in demos (names, contacts, prices in local currency) is fictional and for demonstration only.*
+*All business data in demos (names, contacts, prices in local currency) is fictional and for demonstration only. Food/interior photos in the restaurant demo are AI-generated.*
